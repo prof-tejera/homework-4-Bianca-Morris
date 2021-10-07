@@ -44,10 +44,20 @@ class Calculator extends Component {
 
   render() {
     return (
-      <>
+      <div style={{
+        backgroundColor: "#d1d8e3",
+        width: "350px",
+        height: "400px",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        borderRadius: "20px",
+        boxShadow: "2px 2px 10px rgba(0 , 0 , 0, 0.5)"
+      }}>
         <Screen value={this.getScreenValue()} />
         <div style={{ display: "flex", width: "300px" }}>
-          <div style={{ display: "flex", flexWrap: "wrap" }}>
+          <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-between" }}>
             <Number value={1} onClick={this.handleNumberClick} />
             <Number value={2} onClick={this.handleNumberClick} />
             <Number value={3} onClick={this.handleNumberClick} />
@@ -68,7 +78,7 @@ class Calculator extends Component {
             <Operator value="clear" onClick={this.handleOperatorClick} />
           </div>
         </div>
-      </>
+      </div>
     );
   }
 }
