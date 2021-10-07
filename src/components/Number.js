@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Container = styled.div`
   padding: 10px;
   border: 1px solid black;
-  width: 60px;
+  width: 40px;
 `;
 
 class Number extends Component {

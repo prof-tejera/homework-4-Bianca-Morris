@@ -46,9 +46,8 @@ class Calculator extends Component {
     return (
       <>
         <Screen value={this.getScreenValue()} />
-        <div style={{ display: "flex" }}>
-          <div>
-            <Number value={0} onClick={this.handleNumberClick} />
+        <div style={{ display: "flex", width: "300px" }}>
+          <div style={{ display: "flex", flexWrap: "wrap" }}>
             <Number value={1} onClick={this.handleNumberClick} />
             <Number value={2} onClick={this.handleNumberClick} />
             <Number value={3} onClick={this.handleNumberClick} />
@@ -58,6 +57,7 @@ class Calculator extends Component {
             <Number value={7} onClick={this.handleNumberClick} />
             <Number value={8} onClick={this.handleNumberClick} />
             <Number value={9} onClick={this.handleNumberClick} />
+            <Number value={0} onClick={this.handleNumberClick} />
           </div>
           <div style={{ paddingLeft: 10 }}>
             <Operator value="+" onClick={this.handleOperatorClick} />

@@ -5,6 +5,7 @@ const Container = styled.div`
   padding: 10px;
   border: 1px solid black;
   width: 60px;
+  text-align: center;
 `;
 
 class Operator extends Component {
