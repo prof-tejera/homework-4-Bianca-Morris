@@ -1,6 +1,8 @@
 import { Component } from 'react';
 import styled from 'styled-components';
 
+import { propTypes } from './propTypes';
+
 const Container = styled.div`
   background-color: #ffffff;
   width: 300px;
@@ -31,6 +33,9 @@ class Screen extends Component {
       </Container>
     );
   }
+}
+Screen.propTypes = {
+  value: propTypes.value
 }
 
 export default Screen;

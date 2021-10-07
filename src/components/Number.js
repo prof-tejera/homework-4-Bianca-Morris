@@ -1,9 +1,10 @@
 import { Component } from 'react';
 import styled from 'styled-components';
 
+import { propTypes } from './propTypes';
+
 const Container = styled.div`
   padding: 10px;
-  // border: 1px solid black;
   width: 40px;
   height: 40px;
   background-color: #a1b4d1;
@@ -22,6 +23,10 @@ class Number extends Component {
       </Container>
     );
   }
+}
+Number.propTypes = {
+  value: propTypes.value,
+  onClick: propTypes.onClick
 }
 
 export default Number;
