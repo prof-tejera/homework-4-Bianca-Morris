@@ -1,0 +1,21 @@
+.operator-btn {
+    cursor: pointer;
+}
+
+.operator-btn.is-clear {
+    color: #ffffff;
+    background-color: #9e4c4c;
+    font-weight: 500;
+}
+
+.operator-btn:not(.is-clear):not(.disabled) {
+    background-color: #a5d1a1;
+    color: #21381f;
+    font-weight: 700;
+}
+
+.operator-btn.disabled {
+    cursor: not-allowed;
+    background-color: #dddddd;
+    color: #333333;
+}
