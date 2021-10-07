@@ -48,9 +48,10 @@ class Calculator extends Component {
 
     const noNumberInputtedYet = first === null;
     const bothNumbersAndOpSelected = ((first || isNaN(first)) && (second))
+    const firstNumSelectedButNotSecond = first && (!second || isNaN(second));
     
     const disableOperators = !!(noNumberInputtedYet || bothNumbersAndOpSelected) ;
-    const disableEquals = (first && (!second || isNaN(second)) || noNumberInputtedYet);
+    const disableEquals = firstNumSelectedButNotSecond || noNumberInputtedYet;
 
     const CalculatorWrapper = styled.div`
       background-color: #d1d8e3;
