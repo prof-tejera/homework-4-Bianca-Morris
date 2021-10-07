@@ -13,13 +13,16 @@ const Container = styled.div`
   color: #0b2245;
   font-size: 2em;
   font-weight: 700px;
+  cursor: pointer;
 `;
 
 class Number extends Component {
   render() {
+    const { onClick, value } = this.props;
     return (
-      <Container onClick={() => this.props.onClick(this.props.value)}>
-        {this.props.value}
+      <Container
+        onClick={() => onClick(value)}>
+        {value}
       </Container>
     );
   }

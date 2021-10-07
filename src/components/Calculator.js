@@ -43,6 +43,7 @@ class Calculator extends Component {
   getScreenValue = () => this.state.second || this.state.first;
 
   render() {
+    const { operator, second } = this.state;
     return (
       <div style={{
         backgroundColor: "#d1d8e3",
@@ -55,7 +56,7 @@ class Calculator extends Component {
         borderRadius: "20px",
         boxShadow: "2px 2px 10px rgba(0 , 0 , 0, 0.5)"
       }}>
-        <Screen value={this.getScreenValue()} />
+        <Screen value={this.getScreenValue()} {...{ operator, second }} />
         <div style={{ display: "flex", width: "300px" }}>
           <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-between" }}>
             <Number value={1} onClick={this.handleNumberClick} />
@@ -83,7 +84,7 @@ class Calculator extends Component {
             <Operator value="x" onClick={this.handleOperatorClick} />
             <Operator value="-" onClick={this.handleOperatorClick} />
             <Operator value="=" onClick={this.handleOperatorClick} />
-            <Operator value="clear" onClick={this.handleOperatorClick} />
+            <Operator value="clear" isClear onClick={this.handleOperatorClick} />
           </div>
         </div>
       </div>

@@ -6,5 +6,8 @@ export const propTypes = {
         PropTypes.string,
         PropTypes.number
     ]),
-    onClick: PropTypes.func.isRequired
+    onClick: PropTypes.func.isRequired,
+    isClear: PropTypes.bool,
+    operator: PropTypes.string,
+    second: PropTypes.string
 }

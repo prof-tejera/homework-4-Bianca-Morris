@@ -9,7 +9,6 @@ const Container = styled.div`
   height: 70px;
   text-align: right;
   margin-bottom: 10px;
-  -webkit-box-shadow: inset 0px 0px 21px -3px rgba(0,0,0,0.2); 
   box-shadow: inset 0px 0px 21px -3px rgba(0,0,0,0.2);
   display: flex;
   flex-direction: row-reverse;
@@ -25,17 +24,22 @@ const InnerContainer = styled.div`
 
 class Screen extends Component {
   render() {
+    const { value, operator = null, second } = this.props;
+    
+    const opToRender = operator === "=" || second ? null: operator;
     return (
       <Container>
         <InnerContainer>
-          {this.props.value}
+          {value} <div>{opToRender}</div>
         </InnerContainer>
       </Container>
     );
   }
 }
 Screen.propTypes = {
-  value: propTypes.value
+  value: propTypes.value,
+  operator: propTypes.operator,
+  second: propTypes.second
 }
 
 export default Screen;
