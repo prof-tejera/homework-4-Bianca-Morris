@@ -12,7 +12,7 @@ As you can tell the current layout needs a lot of styling work. Modify the layou
 
 1. Style the calculator however you want. Feel free to use any colors, layout, and animations that you would like. Be as creative as you want.
 2. Define all PropTypes for `Number`, `Operator`, and `Screen` components. If you add more components make sure to define the PropTypes.
-3. Deploy your application using any method you want (repo is setup for Github actions). Add the url: URL_TO_PROJECT
+3. Deploy your application using any method you want (repo is setup for Github actions). Add the url: https://prof-tejera.github.io/homework-4-Bianca-Morris
 
 ### Deployment Instructions (Github actions)
 
@@ -29,9 +29,9 @@ For other ways to deploy see https://github.com/prof-tejera/react-deployment-cod
 
 ## Bonus Points
 
-1. Add support for decimal places.
-2. Add support for negative numbers.
-3. How are you handling the overflow of text? How might we handle situations in which we are dealing with really large numbers?
+1. Add support for decimal places. - Didn't attempt this one
+2. Add support for negative numbers. - Didn't attempt this one
+3. How are you handling the overflow of text? How might we handle situations in which we are dealing with really large numbers? I ended up making the calculator "screen" scrollable when numbers are very large. I tried adjusting it so that the scroll direction would start from the left (with direction: rtl), but that caused a lot of strange issues with the placement of the operators, so I got rid of it.
 
 ## How to run the project
 
