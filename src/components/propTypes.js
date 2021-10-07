@@ -9,5 +9,6 @@ export const propTypes = {
     onClick: PropTypes.func.isRequired,
     isClear: PropTypes.bool,
     operator: PropTypes.string,
-    second: PropTypes.string
+    second: PropTypes.string,
+    disabled: PropTypes.bool
 }

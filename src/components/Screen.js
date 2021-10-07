@@ -11,14 +11,13 @@ const Container = styled.div`
   margin-bottom: 10px;
   box-shadow: inset 0px 0px 21px -3px rgba(0,0,0,0.2);
   display: flex;
-  flex-direction: row-reverse;
   font-size: 1.5em;
+  justify-content: flex-end;
   align-items: center;
 `;
 
 const InnerContainer = styled.div`
   overflow-x: scroll;
-  direction: rtl;
   height: 100%;
 `;
 
@@ -30,7 +29,7 @@ class Screen extends Component {
     return (
       <Container>
         <InnerContainer>
-          {value} <div>{opToRender}</div>
+          <div>{value}</div> <div>{opToRender}</div>
         </InnerContainer>
       </Container>
     );

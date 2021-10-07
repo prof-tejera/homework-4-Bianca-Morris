@@ -1,7 +1,8 @@
 import { Component } from "react";
+import styled from 'styled-components';
 
 import Number from "./Number";
-import Operator from "./Operator";
+import Operator from "./Operator/Operator";
 import Screen from "./Screen";
 
 class Calculator extends Component {
@@ -43,22 +44,47 @@ class Calculator extends Component {
   getScreenValue = () => this.state.second || this.state.first;
 
   render() {
-    const { operator, second } = this.state;
+    const { operator, first, second } = this.state;
+
+    const noNumberInputtedYet = first === null;
+    const bothNumbersAndOpSelected = ((first || isNaN(first)) && (second))
+    
+    const disableOperators = !!(noNumberInputtedYet || bothNumbersAndOpSelected) ;
+    const disableEquals = (first && (!second || isNaN(second)) || noNumberInputtedYet);
+
+    const CalculatorWrapper = styled.div`
+      background-color: #d1d8e3;
+      width: 350px;
+      height: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-radius: 20px;
+      box-shadow: 2px 2px 10px rgba(0 , 0 , 0, 0.5);
+    `;
+
+    const NumPad = styled.div`
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    `;
+
+    const OpPane = styled.div`
+      padding-left: 10;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-content: center;
+      margin-left: 15px;
+      border-left: 3px solid #dddddd;
+    `;
+
     return (
-      <div style={{
-        backgroundColor: "#d1d8e3",
-        width: "350px",
-        height: "400px",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-        borderRadius: "20px",
-        boxShadow: "2px 2px 10px rgba(0 , 0 , 0, 0.5)"
-      }}>
+      <CalculatorWrapper>
         <Screen value={this.getScreenValue()} {...{ operator, second }} />
         <div style={{ display: "flex", width: "300px" }}>
-          <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-between" }}>
+          <NumPad>
             <Number value={1} onClick={this.handleNumberClick} />
             <Number value={2} onClick={this.handleNumberClick} />
             <Number value={3} onClick={this.handleNumberClick} />
@@ -69,25 +95,17 @@ class Calculator extends Component {
             <Number value={8} onClick={this.handleNumberClick} />
             <Number value={9} onClick={this.handleNumberClick} />
             <Number value={0} onClick={this.handleNumberClick} />
-          </div>
-          <div style={{
-            paddingLeft: 10,
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "space-between",
-            alignContent: "center",
-            marginLeft: "15px",
-            borderLeft: "3px solid #dddddd"
-          }}>
-            <Operator value="+" onClick={this.handleOperatorClick} />
-            <Operator value="/" onClick={this.handleOperatorClick} />
-            <Operator value="x" onClick={this.handleOperatorClick} />
-            <Operator value="-" onClick={this.handleOperatorClick} />
-            <Operator value="=" onClick={this.handleOperatorClick} />
+          </NumPad>
+          <OpPane>
+            <Operator value="+" onClick={this.handleOperatorClick} disabled={disableOperators}/>
+            <Operator value="/" onClick={this.handleOperatorClick} disabled={disableOperators}/>
+            <Operator value="x" onClick={this.handleOperatorClick} disabled={disableOperators}/>
+            <Operator value="-" onClick={this.handleOperatorClick} disabled={disableOperators}/>
+            <Operator value="=" onClick={this.handleOperatorClick} disabled={disableEquals} />
             <Operator value="clear" isClear onClick={this.handleOperatorClick} />
-          </div>
+          </OpPane>
         </div>
-      </div>
+      </CalculatorWrapper>
     );
   }
 }
