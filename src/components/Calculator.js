@@ -69,7 +69,15 @@ class Calculator extends Component {
             <Number value={9} onClick={this.handleNumberClick} />
             <Number value={0} onClick={this.handleNumberClick} />
           </div>
-          <div style={{ paddingLeft: 10 }}>
+          <div style={{
+            paddingLeft: 10,
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+            alignContent: "center",
+            marginLeft: "15px",
+            borderLeft: "3px solid #dddddd"
+          }}>
             <Operator value="+" onClick={this.handleOperatorClick} />
             <Operator value="/" onClick={this.handleOperatorClick} />
             <Operator value="x" onClick={this.handleOperatorClick} />

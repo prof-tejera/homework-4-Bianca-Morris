@@ -3,9 +3,10 @@ import styled from 'styled-components';
 
 const Container = styled.div`
   padding: 10px;
-  border: 1px solid black;
-  width: 60px;
+  background-color: #a5d1a1;
+  width: 35px;
   text-align: center;
+  align-self: center;
 `;
 
 class Operator extends Component {
